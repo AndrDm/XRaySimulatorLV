@@ -1,0 +1,9 @@
+﻿  pch.cpp
+  dllmain.cpp
+  LV_3D_Util.cpp
+C:\Users\Andrey\Documents\GitHub\XRaySimulatorLV\LV_3D_Util\LV_3D_Util\LV_3D_Util.cpp(203,14): warning C4101: "maximum": Unreferenzierte lokale Variable
+  Code wird generiert...
+     Bibliothek "C:\Users\Andrey\Documents\GitHub\XRaySimulatorLV\LV_3D_Util\x64\Release\LV_3D_Util.lib" und Objekt "C:\Users\Andrey\Documents\GitHub\XRaySimulatorLV\LV_3D_Util\x64\Release\LV_3D_Util.exp" werden erstellt.
+  LINK : /LTCG wurde angegeben, es ist jedoch keine Codegenerierung erforderlich. Entfernen Sie /LTCG aus der Linkbefehlszeile, um die Linkerleistung zu erhöhen.
+  LV_3D_Util.vcxproj -> C:\Users\Andrey\Documents\GitHub\XRaySimulatorLV\LV_3D_Util\x64\Release\LV_3D_Util.dll
+          1 Datei(en) kopiert.

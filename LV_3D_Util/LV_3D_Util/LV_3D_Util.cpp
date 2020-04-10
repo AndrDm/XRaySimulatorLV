@@ -191,3 +191,50 @@ LV_3D_UTIL_API int intersect_triangleLoopImg2(float* LVvert0, float* LVvert1, fl
 	ElapsedMicroseconds.QuadPart /= Frequency.QuadPart;
 	*ExecutionTime = ElapsedMicroseconds.QuadPart;
 }
+
+//http://ndevilla.free.fr/median/median.pdf
+
+typedef float pixelvalue;
+#define PIX_SORT(a,b) { if ((a)>(b)) PIX_SWAP((a),(b)); }
+#define PIX_SWAP(a,b) { pixelvalue temp=(a);(a)=(b);(b)=temp; }
+
+LV_3D_UTIL_API void Median3x3(int ImageSize, float* Image)
+{
+	float p[9], maximum;
+	float* imageOut;
+	int i, j;
+
+	//if (!Image) return;
+
+	imageOut = (float*)malloc(sizeof(float) * ImageSize * ImageSize);
+
+	for (i = 1; i < ImageSize - 1; i++) {
+		for (j = 1; j < ImageSize - 1; j++) {
+			p[0] = Image[j + 0 + (i + 0) * ImageSize];
+			p[1] = Image[j + 1 + (i + 0) * ImageSize];
+			p[2] = Image[j - 1 + (i + 0) * ImageSize];
+			p[3] = Image[j + 0 + (i + 1) * ImageSize];
+			p[4] = Image[j + 1 + (i + 1) * ImageSize];
+			p[5] = Image[j - 1 + (i + 1) * ImageSize];
+			p[6] = Image[j + 0 + (i - 1) * ImageSize];
+			p[7] = Image[j + 1 + (i - 1) * ImageSize];
+			p[8] = Image[j - 1 + (i - 1) * ImageSize];
+			PIX_SORT(p[1], p[2]); PIX_SORT(p[4], p[5]); PIX_SORT(p[7], p[8]);
+			PIX_SORT(p[0], p[1]); PIX_SORT(p[3], p[4]); PIX_SORT(p[6], p[7]);
+			PIX_SORT(p[1], p[2]); PIX_SORT(p[4], p[5]); PIX_SORT(p[7], p[8]);
+			PIX_SORT(p[0], p[3]); PIX_SORT(p[5], p[8]); PIX_SORT(p[4], p[7]);
+			PIX_SORT(p[3], p[6]); PIX_SORT(p[1], p[4]); PIX_SORT(p[2], p[5]);
+			PIX_SORT(p[4], p[7]); PIX_SORT(p[4], p[2]); PIX_SORT(p[6], p[4]);
+			PIX_SORT(p[4], p[2]);
+			imageOut[j + i * ImageSize] = p[4];
+		}
+	}
+
+	for (i = 1; i < ImageSize - 1; i++) {
+		for (j = 1; j < ImageSize - 1; j++) {
+			Image[j + i * ImageSize] = imageOut[j + i * ImageSize];
+		}
+	}
+
+	free(imageOut);
+}

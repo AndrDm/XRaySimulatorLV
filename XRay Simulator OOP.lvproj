@@ -30,6 +30,7 @@
 		<Item Name="XRay Scene.lvclass" Type="LVClass" URL="../XRay Scene/XRay Scene.lvclass"/>
 		<Item Name="XRay Table.lvclass" Type="LVClass" URL="../XRay Table/XRay Table.lvclass"/>
 		<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
+		<Item Name="Main (NoVisionRequired).vi" Type="VI" URL="../Main (NoVisionRequired).vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Bit-array To Byte-array.vi" Type="VI" URL="/&lt;vilib&gt;/picture/pictutil.llb/Bit-array To Byte-array.vi"/>
@@ -85,7 +86,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{7582E47F-B8DC-45AA-9793-00371DBF136E}</Property>
-				<Property Name="Bld_version.build" Type="Int">2</Property>
+				<Property Name="Bld_version.build" Type="Int">3</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">XRaySimu.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/XRay Simu Application/XRaySimu.exe</Property>

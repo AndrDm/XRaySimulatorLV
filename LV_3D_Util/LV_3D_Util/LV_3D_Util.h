@@ -28,6 +28,8 @@ extern "C" {
 		float DetectorSize,
 		float FDD,
 		LONGLONG* ExecutionTime);
+	
+	LV_3D_UTIL_API void Median3x3(int ImageSize, float* Image);
 
 #ifdef __cplusplus
 }

@@ -1,0 +1,10 @@
+﻿  pch.cpp
+  dllmain.cpp
+  LV_3D_Util.cpp
+  Code wird generiert...
+     Bibliothek "C:\Users\Andrey\Documents\GitHub\XRaySimulatorLV\LV_3D_Util\x64\Debug\LV_3D_Util.lib" und Objekt "C:\Users\Andrey\Documents\GitHub\XRaySimulatorLV\LV_3D_Util\x64\Debug\LV_3D_Util.exp" werden erstellt.
+  LV_3D_Util.vcxproj -> C:\Users\Andrey\Documents\GitHub\XRaySimulatorLV\LV_3D_Util\x64\Debug\LV_3D_Util.dll
+  Der Prozess kann nicht auf die Datei zugreifen, da sie von einem anderen Prozess verwendet wird.
+          0 Datei(en) kopiert.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(149,5): error MSB3073: Der Befehl "copy /y "C:\Users\Andrey\Documents\GitHub\XRaySimulatorLV\LV_3D_Util\x64\Debug\LV_3D_Util.dll" "C:\Users\Andrey\Documents\GitHub\XRaySimulatorLV\LV_3D_Util\LV_3D_Util\..\..\LV_3D_Util64.dll"
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(149,5): error MSB3073: :VCEnd" wurde mit dem Code 1 beendet.
