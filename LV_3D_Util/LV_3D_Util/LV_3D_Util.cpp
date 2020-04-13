@@ -83,6 +83,20 @@ void sort_walls(float* depth, float* depth_sorted, int n, int* nWalls)
 	}
 }
 
+//https://en.wikipedia.org/wiki/Fast_inverse_square_root
+float Q_rsqrt(float number)
+{
+	const float x2 = number * 0.5F;
+	const float threehalfs = 1.5F;
+
+	union {
+		float f;
+		int i;
+	} conv = { number }; // member 'f' set to value of 'number'.
+	conv.i = 0x5f3759df - (conv.i >> 1);
+	conv.f *= (threehalfs - (x2 * conv.f * conv.f));
+	return conv.f;
+}
 
 LV_3D_UTIL_API int intersect_triangleLoopImg2(float* LVvert0, float* LVvert1, float* LVvert2,
 	int MeshSize, int ImageSize, float* Image, float DetectorSize, float FDD, LONGLONG* ExecutionTime)
@@ -133,7 +147,8 @@ LV_3D_UTIL_API int intersect_triangleLoopImg2(float* LVvert0, float* LVvert1, fl
 			dirY = FDD;
 			dirX = (DetectorSize / HalfSize) * ((float)x - HalfSize);
 			dirZ = (DetectorSize / HalfSize) * ((float)z - HalfSize);
-			scale = 1.0f / sqrtf(dirX * dirX + dirY * dirY + dirZ * dirZ);
+			//scale = 1.0f / sqrtf(dirX * dirX + dirY * dirY + dirZ * dirZ);
+			scale = Q_rsqrt(dirX * dirX + dirY * dirY + dirZ * dirZ);
 			dir[0] = dirX * scale;
 			dir[1] = dirY * scale;
 			dir[2] = dirZ * scale;
